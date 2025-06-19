@@ -46,6 +46,12 @@ public class ExtraClearDrownOracle extends Pkcs1Oracle {
         public State state;
     }
 
+    /**
+     * Constructs a new ExtraClearDrownOracle for testing PKCS conformity using the extra clear
+     * oracle vulnerability.
+     *
+     * @param tlsConfig The TLS configuration containing SSL2 cipher suite settings
+     */
     public ExtraClearDrownOracle(Config tlsConfig) {
         this.tlsConfig = tlsConfig;
         cipherSuite = tlsConfig.getDefaultSSL2CipherSuite();
