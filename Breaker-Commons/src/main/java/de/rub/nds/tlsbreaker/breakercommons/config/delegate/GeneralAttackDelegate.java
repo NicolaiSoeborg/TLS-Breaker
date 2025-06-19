@@ -18,7 +18,9 @@ public class GeneralAttackDelegate extends GeneralDelegate {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    /** Default Constructor */
+    /**
+     * Default constructor for GeneralAttackDelegate.
+     */
     public GeneralAttackDelegate() {}
 
     /**
