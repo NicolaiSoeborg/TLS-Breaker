@@ -30,16 +30,36 @@ public class ServerDelegate extends Delegate {
     @Parameter(names = "-port", description = "ServerPort")
     private Integer port = null;
 
+    /**
+     * Default constructor for ServerDelegate.
+     */
     public ServerDelegate() {}
 
+    /**
+     * Returns the configured server port.
+     *
+     * @return the server port number, or null if not set
+     */
     public Integer getPort() {
         return port;
     }
 
+    /**
+     * Sets the server port to the specified value.
+     *
+     * @param port the port number to set
+     */
     public void setPort(int port) {
         this.port = port;
     }
 
+    /**
+     * Applies this delegate configuration to the provided Config object.
+     * Sets up the server configuration with the specified port.
+     *
+     * @param config the Config object to apply the delegate settings to
+     * @throws com.beust.jcommander.ParameterException if the port is not set or is invalid
+     */
     @Override
     public void applyDelegate(Config config) {
 
