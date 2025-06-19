@@ -23,7 +23,9 @@ public class AttackDelegate extends Delegate {
                             + "executed (WARNING)")
     private boolean executeAttack = false;
 
-    /** Default Constructor */
+    /**
+     * Default constructor for AttackDelegate.
+     */
     public AttackDelegate() {}
 
     /**
