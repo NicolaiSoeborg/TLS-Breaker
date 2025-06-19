@@ -31,17 +31,37 @@ public class ClientDelegate extends Delegate {
 
     private int extractedPort;
 
+    /**
+     * Default constructor for ClientDelegate.
+     */
     public ClientDelegate() {}
 
+    /**
+     * Returns the configured host connection string.
+     *
+     * @return the host connection string in format "host:port"
+     */
     public String getHost() {
         return host;
     }
 
+    /**
+     * Sets the host connection string and extracts host and port parameters.
+     *
+     * @param host the host connection string in format "host:port"
+     */
     public void setHost(String host) {
         this.host = host;
         extractParameters();
     }
 
+    /**
+     * Applies this delegate configuration to the provided Config object.
+     * Configures the client connection with host, port, and optional SNI hostname.
+     *
+     * @param config the Config object to apply the delegate settings to
+     * @throws com.beust.jcommander.ParameterException if host format is invalid
+     */
     @Override
     public void applyDelegate(Config config) {
         extractParameters();
@@ -119,18 +139,38 @@ public class ClientDelegate extends Delegate {
         }
     }
 
+    /**
+     * Returns the configured SNI hostname.
+     *
+     * @return the SNI hostname, or null if not set
+     */
     public String getSniHostname() {
         return sniHostname;
     }
 
+    /**
+     * Sets the SNI hostname for the Server Name Indication extension.
+     *
+     * @param sniHostname the SNI hostname to use
+     */
     public void setSniHostname(String sniHostname) {
         this.sniHostname = sniHostname;
     }
 
+    /**
+     * Returns the host extracted from the connection string.
+     *
+     * @return the extracted host
+     */
     public String getExtractedHost() {
         return extractedHost;
     }
 
+    /**
+     * Returns the port extracted from the connection string.
+     *
+     * @return the extracted port number
+     */
     public int getExtractedPort() {
         return extractedPort;
     }
