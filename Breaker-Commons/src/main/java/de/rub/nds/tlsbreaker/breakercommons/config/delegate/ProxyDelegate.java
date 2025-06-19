@@ -28,6 +28,13 @@ public class ProxyDelegate extends Delegate {
                     "Specify the host and port for control messages used in the proxy. Syntax: localhost:5555")
     private String proxyControl = "localhost:5555";
 
+    /**
+     * Applies this delegate configuration to the provided Config object.
+     * Configures the proxy settings for both data and control connections.
+     *
+     * @param config the Config object to apply the delegate settings to
+     * @throws com.beust.jcommander.ParameterException if proxy data format is invalid
+     */
     @Override
     public void applyDelegate(Config config) {
 
@@ -77,10 +84,20 @@ public class ProxyDelegate extends Delegate {
         return port;
     }
 
+    /**
+     * Sets the proxy data connection string.
+     *
+     * @param proxyData the proxy data connection string in format "host:port"
+     */
     public void setProxyData(String proxyData) {
         this.proxyData = proxyData;
     }
 
+    /**
+     * Sets the proxy control connection string.
+     *
+     * @param proxyControl the proxy control connection string in format "host:port"
+     */
     public void setProxyControl(String proxyControl) {
         this.proxyControl = proxyControl;
     }
